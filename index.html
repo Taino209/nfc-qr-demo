@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070809">
+  <meta name="description" content="See how NFC's premium QR-only countertop stands help customers reach a business's Google review page. Seven-day local trial available.">
+  <title>NFC | Premium QR Review Stand Demo</title>
+  <style>
+    :root{--ink:#050607;--gold:#d4af37;--goldlight:#f9df85;--white:#f7f7f8;--muted:#c0beb3;--edge:#54451d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(ellipse at 63% 4%,#342a0e 0%,#111210 22%,#050607 62%)}
+    body:before{content:"";position:fixed;pointer-events:none;inset:0;opacity:.13;background:repeating-linear-gradient(130deg,transparent 0 53px,rgba(223,188,92,.1) 54px,transparent 57px)}
+    button,a{-webkit-tap-highlight-color:transparent}a:focus-visible{outline:2px solid #f9df85;outline-offset:5px}
+    .shell{max-width:1100px;margin:0 auto;padding:0 25px}.top{border-bottom:1px solid #89702c70;background:linear-gradient(90deg,#14130e,#050607)}
+    .topbar{display:flex;justify-content:space-between;align-items:center;min-height:86px;gap:14px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+    .brand-emblem{width:48px;height:48px;display:grid;place-items:center;border:1.8px solid var(--gold);border-radius:50%;color:var(--goldlight);font-family:Georgia,serif;font-size:17px;font-weight:bold;box-shadow:0 0 22px #d4af3725}
+    .brandname{font-weight:700;letter-spacing:.3em;font-size:15px}.brandsub{display:block;letter-spacing:.21em;font-size:9px;color:#bba969;font-weight:600;margin-top:3px}
+    .tinycall{color:var(--goldlight);text-decoration:none;border-bottom:1px solid #b5913b;font-size:13px;white-space:nowrap}
+    .previewtag{text-align:center;background:#33290f;border-bottom:1px solid #967a32;color:#fee6a0;padding:9px;font-size:10px;font-weight:700;letter-spacing:.17em}
+    .hero{display:grid;grid-template-columns:1fr 0.95fr;gap:55px;align-items:center;padding-top:67px;padding-bottom:60px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:750;letter-spacing:.18em;text-transform:uppercase;color:#f9db7b;border:1px solid #8d743c82;padding:10px 13px;background:#3b331a33}
+    .eyebrow:before{content:"";height:6px;width:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 10px #f6ca62}
+    h1{font-size:clamp(46px,5.1vw,70px);line-height:1.02;letter-spacing:-.055em;margin:27px 0 20px;font-weight:850}
+    .gold{background:linear-gradient(120deg,#af7d20,#fff1ab 38%,#bb8c27 71%,#f7d46e);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .desc{font-size:17px;color:#cdc9ba;line-height:1.78;max-width:480px;margin:0 0 29px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+    .primary{display:inline-flex;gap:9px;align-items:center;justify-content:center;background:linear-gradient(135deg,#a87618,#f3d876 48%,#b18324);border:1px solid #e7c666;color:#17130b;text-decoration:none;padding:16px 20px;font-weight:850;font-size:13px;letter-spacing:.025em;box-shadow:0 11px 28px #c996172c;min-height:52px}
+    .secondary{display:inline-flex;align-items:center;justify-content:center;padding:16px 19px;min-height:52px;color:#fff;border:1px solid #696354;text-decoration:none;font-weight:650;font-size:13px}
+    .promise{display:flex;gap:9px;align-items:center;margin-top:25px;color:#b1aea2;font-size:12px}.promise b{color:#f1d686;font-size:19px}
+    .stand-area{display:grid;place-items:center;position:relative;min-height:580px}
+    .glow{position:absolute;width:75%;height:75%;background:radial-gradient(ellipse,#be8d2c30,transparent 70%);filter:blur(22px)}
+    .stand{width:310px;min-height:490px;padding:14px;position:relative;background:linear-gradient(118deg,#987326,#d4b86b 23%,#654915 47%,#e3c679 87%,#735219);box-shadow:15px 23px 55px #000a,0 0 30px #bb942028;transform:perspective(1000px) rotateY(-6deg) rotateX(3deg)}
+    .stand-inner{height:100%;min-height:462px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:24px 18px;background:radial-gradient(ellipse at 65% 10%,#212114,#090a0c 45%,#020305 90%);border:1px solid #caa44266}
+    .stand-logo{width:112px;height:112px;border:2px solid #d4af37;border-radius:50%;display:grid;place-items:center;margin:0 auto 24px;box-shadow:0 0 25px #d4af3735,inset 0 0 15px #d4af3716;font-family:Georgia,serif;color:#f4d475;font-size:27px;font-weight:bold}
+    .stand-head{font-size:25px;font-weight:860;text-align:center;letter-spacing:-.03em;color:#e8c469}.stand-body{color:#e8e5dd;text-align:center;font-size:13px;line-height:1.7;margin:8px 0 18px}
+    .qr-placeholder{width:178px;height:178px;background:white;color:#1c1c1c;border:9px solid white;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;box-shadow:0 0 0 2px #a37e2f}
+    .fake-qr{background-color:#fff;background-image:repeating-linear-gradient(90deg,transparent 0 6px,#0e0e0e 6px 11px,transparent 11px 17px),repeating-linear-gradient(0deg,transparent 0 9px,#151515 9px 13px,transparent 13px 19px);opacity:.7;width:158px;height:158px;position:absolute}
+    .fake-qr:after{content:"DEMO";position:absolute;inset:65px 32px;background:#fff;color:#090909;text-align:center;font-size:23px;font-weight:950;letter-spacing:.07em;padding:2px}
+    .stand-note{color:#fff;font-weight:650;font-size:12px;letter-spacing:.15em;margin-top:22px}.stand-foot{font-size:10px;color:#9c9066;margin-top:22px;text-align:center}
+    .pedestal{width:325px;height:22px;border-radius:3px 3px 9px 9px;transform:perspective(700px) rotateX(22deg);background:linear-gradient(#c3a453,#9f7d24,#46350b);box-shadow:4px 8px 15px #000}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,#6f5a26,#cfac51,#6f5a26,transparent)}
+    .benefits{padding:44px 0 52px}.section-tag{text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#c5a64d;font-weight:800}.section-title{text-align:center;font-size:32px;margin:12px 0 32px;letter-spacing:-.03em}
+    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{background:linear-gradient(155deg,#191913,#0e0e10);border:1px solid #a58c482b;padding:25px 22px;min-height:160px}.tile .num{color:#e5c573;font-family:Georgia,serif;font-size:27px;margin-bottom:15px}.tile h3{margin:0 0 7px;font-size:15px}.tile p{margin:0;color:#bcb8ad;line-height:1.6;font-size:13px}
+    .closing{margin:0 auto 65px;max-width:880px;text-align:center;padding:42px 26px;background:linear-gradient(130deg,#1d1b10,#0a0a0c 70%);border:1px solid #b18c3f67;box-shadow:0 20px 80px #0008}
+    .closing h2{font-size:28px;margin:0 0 10px}.closing p{color:#c3beb0;line-height:1.6;margin:0 auto 22px;max-width:540px}.small{color:#9e9b92;font-size:12px;line-height:1.6}.foot{border-top:1px solid #4b442f;padding:25px 0 35px;color:#afa898;font-size:12px;text-align:center}.foot b{color:#e4c578}
+    @media(max-width:840px){.hero{gap:18px}.stand-area{min-height:520px}.stand{width:255px;min-height:410px}.stand-inner{min-height:385px;padding:18px 12px}.stand-logo{width:90px;height:90px;font-size:22px;margin-bottom:16px}.stand-head{font-size:21px}.qr-placeholder{width:146px;height:146px}.fake-qr{width:126px;height:126px}.fake-qr:after{inset:49px 17px}.pedestal{width:265px}}
+    @media(max-width:670px){.shell{padding:0 19px}.topbar{min-height:70px}.brand-emblem{width:42px;height:42px}.brandname{font-size:14px}.brandsub{font-size:8px}.tinycall{font-size:11px}.hero{grid-template-columns:1fr;padding-top:40px;padding-bottom:45px;gap:0;text-align:center}.hero-content{display:flex;flex-direction:column;align-items:center}.eyebrow{font-size:9px}h1{font-size:48px;margin-top:25px}.desc{font-size:15px;line-height:1.75;max-width:470px}.actions{justify-content:center}.promise{justify-content:center}.stand-area{min-height:460px}.stand{width:245px;min-height:402px;transform:none}.stand-inner{min-height:372px}.stand-logo{width:80px;height:80px}.stand-head{font-size:20px}.stand-body{font-size:12px}.stand-note{margin-top:15px}.benefits{padding-top:32px}.section-title{font-size:26px}.cols{grid-template-columns:1fr;gap:12px}.tile{min-height:0;padding:18px 20px}.tile .num{font-size:22px;margin-bottom:10px}.closing{margin-top:8px;padding:32px 20px}.closing h2{font-size:24px}}
+  </style>
+</head>
+<body>
+  <div class="previewtag" role="note">LIVE DEMONSTRATION · NOT A GOOGLE REVIEW FORM</div>
+  <header class="top"><div class="shell topbar">
+    <a class="brand" href="#top" aria-label="NFC home"><span class="brand-emblem">NFC</span><span><span class="brandname">NFC</span><span class="brandsub">PREMIUM QR SOLUTIONS</span></span></a>
+    <a class="tinycall" href="tel:+18632215022">Call (863) 221-5022 ↗</a>
+  </div></header>
+  <main id="top"><section class="shell hero" aria-labelledby="headline"><div class="hero-content">
+    <span class="eyebrow">You just scanned our demo stand</span>
+    <h1 id="headline">One Scan.<br><span class="gold">Real Feedback.</span></h1>
+    <p class="desc">Imagine this experience customized for your restaurant, salon, café, or storefront. NFC creates beautiful QR countertop stands that open <em>your business’s own Google review page</em> directly with a simple phone-camera scan.</p>
+    <div class="actions"><a class="primary" href="tel:+18632215022">Ask About a 7-Day Trial →</a><a class="secondary" href="#how">See How It Works</a></div>
+    <div class="promise"><b>✧</b><span>7-day trial · $0 upfront · Honest reviews of any rating</span></div>
+  </div>
+  <div class="stand-area" aria-label="Concept rendering of a customizable luxury black and gold QR display stand"><div class="glow"></div><div>
+    <div class="stand"><div class="stand-inner"><div class="stand-logo">LOGO</div><div class="stand-head">Scan to Share<br>Feedback</div><div class="stand-body">An effortless way to find<br>your review page</div><div class="qr-placeholder" aria-label="Illustrative QR placeholder, not an active code"><div class="fake-qr"></div></div><div class="stand-note">SCAN TO SHARE FEEDBACK</div><div class="stand-foot">CUSTOMIZED FOR YOUR BUSINESS</div></div></div><div class="pedestal"></div>
+  </div></div></section>
+  <div class="divider"></div>
+  <section class="shell benefits" id="how" aria-labelledby="how-title"><div class="section-tag">Simple for the owner · Simple for guests</div><h2 class="section-title" id="how-title">How your stand works</h2>
+    <div class="cols"><article class="tile"><div class="num">01 /</div><h3>We customize it</h3><p>Your approved logo, premium black-and-gold artwork, and your verified Google review link.</p></article>
+    <article class="tile"><div class="num">02 /</div><h3>Guests scan the QR</h3><p>They open their phone camera and choose whether to leave an honest review. No special app.</p></article>
+    <article class="tile"><div class="num">03 /</div><h3>You try it locally</h3><p>We provide a seven-day no-upfront-cost trial. Continue only if it fits your business.</p></article></div>
+  </section>
+  <section class="shell"><div class="closing"><div class="section-tag">NFC · Your local QR stand partner</div><h2>Ready to see your logo on one?</h2><p>Let's show you a custom 4×6 countertop stand. We'll explain pricing, the optional managed-link service, and the trial terms before any purchase.</p><a class="primary" href="tel:+18632215022">Call NFC · (863) 221-5022 →</a><p class="small" style="margin-top:23px">Founder & CEO: Felix E. Vazquez. This is a demonstration page. It does not accept or solicit Google reviews here, and no review count or rating is guaranteed.</p></div></section>
+  </main>
+  <footer class="foot shell"><b>NFC</b> · Premium QR Countertop Experiences · (863) 221-5022</footer>
+</body>
+</html>
